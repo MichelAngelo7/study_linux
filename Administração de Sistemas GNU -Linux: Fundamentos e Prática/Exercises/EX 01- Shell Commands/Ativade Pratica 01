@@ -1,0 +1,152 @@
+# Atividade Pratica 01
+  
+01 – Observe a imagem a seguir e explique o que representa (significa) cada uma das partes (no contexto) do Shell
+BASH (interpretador de comandos) do GNU/Linux:
+
+[root@localhost var]#
+
+
+* root = Nome do Usuário
+* localhost = Nome da maquina
+* var = Pasta Corrente
+* # = indica o contexto de usuario no caso super usuário
+
+02 -  Qual a função dos seguintes diretórios:
+
+* /bin = Pasta que contem os principais comandos do Shell
+* /boot = Contem arquivos para inicialização do sistema 
+* /etc = Contém as principais * /home = Pasta que contem os diretórios dos usurários do sistema
+* /lib = Contém as principais bibliotecas utilizada pelos aplicativos
+* /proc = diretório virtual criado pelo sistema para seu funcionamento 
+* /usr = Contém arquivos e aplicativos de usuários do sistema, “documentações” do sistema, entre outros tipos de arquivo.
+* /var = Contém os logs do sistema e dados de spool de impressora e cache
+* /sbin = Contém os programas/comandos acessíveis pelo super usuário(root) para administração do sistema.
+
+03 – O que significa o símbolo ~ dentro do sistema operacional Linux?
+
+RESPOSTA = e uma referencia ao diretório padrão do usuário.
+
+04 – Que característica tem os arquivos que se iniciam com ponto dentro do sistema GNU/Linux?
+
+RESPOSTA = Aquivos iniciados com ponto são aquivos ocultos.
+
+ 
+05 – Qual o comando utilizado para navegar entre os diretórios?
+
+RESPOSTA = cd
+
+06 – Qual é o atalho para:
+
+Limpar a tela = CTRL + R
+
+Alternar do modo gráfico para texto = CTRL + ALT + F1 ....F5
+
+Alternar do modo texto para gráfico = CTRL + ALT + F7 ....F12
+
+Alternar entre as janelas texto = CTRL + Page Up ou CTRL + Page Down
+
+Mostrar “telas” à cima (buffer das saídas dos comandos anteriores) = Seta para cima
+
+07 – Qual a informação exibida por cada uma das 7 colunas do comando “ls –l”?
+
+RESPOSTA = 
+
+1 -Tipo de arquivo e permissões/ 2- inodes/ 3 -proprietário / 4 - Grupo / 5 - Tamanho / 6 - data de modificação / 7 - nome 
+
+08 – Com uma única linha de comando, crie a seguinte estrutura de diretórios dentro do seu diretório pessoal:
+continente/pais/estado/cidade/bairro/rua/
+Em caso de dúvidas, me envie um PRINT com a linha de comando utilizada.
+
+RESPOSTA = mkdir -p continente/pais/estado/cidade/bairro/rua/ 
+
+09 – Altere a estrutura da questão 09 para: planeta/continente/pais/regiao/estado/cidade/bairro/rua/
+Em caso de dúvidas, me envie um PRINT com a linha de comando utilizada.
+OBS.: Conforme o enunciado da questão diz “Altere” ao invés de “Criar” uma nova estrutura.
+
+RESPOSTA =
+$mkdir planeta
+
+$mv continente/ planeta/ 
+
+$mkdir planeta/continente/pais/regiao
+
+$cd planeta/continente/pais
+
+$mv estado/ regiao
+
+10 – Explique a função e diferenças dos seguintes comandos (crie arquivos e diretórios em sua VM para testar):
+
+a. rm - deleta arquivos arquivos. 
+
+b. rm –r - remove diretórios.
+
+c. rmdir - remove diretórios vazios 
+
+11 – Com o comando “rmdir” apague os diretórios cidade/bairro/rua/
+
+RESPOSTA =
+
+rmdir -p cidade/bairro/rua
+
+12 – Dentro do diretório de configurações do sistema Linux, encontre os seguintes arquivos e copie-os para o
+diretório “pais”. Em caso de dúvidas, me envie um PRINT com a linha de comando utilizada.
+
+a) fstab
+
+$cp /etc/fstab planeta/continente/pais/
+
+b) group
+
+$cp /etc/group planeta/continente/pais
+
+c) hosts
+
+$cp /etc/hosts planeta/continente/pais
+
+13 – Conceitue link simbólico e link hard.
+
+Simbólico = 
+
+* Um link simbólico (soft link) se comporta como um "atalho" para outro arquivo ou diretório. Ou seja, ele praticamente só aponta para este outro arquivo. 
+
+* Ao deletar o arquivo original, o link simbólico irá falhar. 
+
+Ao deletar o link simbólico, nada irá acontecer com o arquivo original.
+
+Hard =
+
+Um hard link é um ponteiro para o inode de um arquivo ou diretório.
+
+* Ao deletar o arquivo original ou o hard link, o outro ainda existe (porque o inode é mantido).
+    
+* Ao modificar qualquer link apontando para um mesmo inode, todos links, incluindo o arquivo original, são modificados.
+
+
+14 – Crie um link simbólico para o arquivo “/etc/fstab” dentro do seu diretório pessoal com o nome de
+“mounts.link”. Em caso de dúvidas, me envie um PRINT com a linha de comando utilizada.
+RESPOSTA =
+
+
+15 – Explique a função dos seguintes comandos (preferencialmente testando em uma VM):
+
+pwd = Mostra o diretório corrente 
+
+tree = Lista uma estrutura de diretórios 
+
+mv = move (renomeia) aquivos ou diretórios 
+
+cal = exibe o calendário 
+
+cd ~ = move para o diretório pessoal do usuário 
+
+
+16 – Crie um novo arquivo com o nome “teste” através do comando “touch” dentro do diretório pessoal do usuário
+“root”. Posteriormente, mova este arquivo para o diretório “/var”, alterando o nome para “teste.var”. Em caso de
+dúvidas, me envie um PRINT com a linha de comando utilizada.
+
+RESPOSTA =
+
+ #touch ~/teste
+ #mv ~/teste /var/teste.var 
+ 
+ 
