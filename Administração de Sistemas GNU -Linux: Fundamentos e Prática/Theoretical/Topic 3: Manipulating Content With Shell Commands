@@ -1,0 +1,32 @@
+## Topic 3: Manipulating Content With Shell Commands
+
+## cat
+Displays the contents of a file on standard output(screen).
+
+*$cat "file"*
+
+## more 
+
+Display the contents of a file on standard output(screen), displaying one screen at a time (ideal for large files)
+
+*$more "file"*
+
+
+## less
+
+Display the contents of a file on standard output(screen), with pagination options
+
+*$less "file"*
+
+## head
+Displays in the standard output (screen), the first ten line of the file per standard, and this value can be specified
+
+*$head "file"*
+
+## tail
+Display in the standard output (screen), the last ten lines of the file per standard, and this value can be specified
+
+*$tail "file"*
+
+*$tail -f "file"* Displays in real time changes, ideal for monitoring hackers attacks 
+
