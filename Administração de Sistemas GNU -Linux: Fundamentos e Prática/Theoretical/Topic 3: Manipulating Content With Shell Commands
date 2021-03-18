@@ -30,3 +30,78 @@ Display in the standard output (screen), the last ten lines of the file per stan
 
 *$tail -f "file"* Displays in real time changes, ideal for monitoring hackers attacks 
 
+# Part 2
+
+### grep 
+
+Search files or your standard entry for a character string
+
+$grep <options> [string_or_regex] [file os path]
+
+ * Ex: grep“root”  /etc/passwd
+ * Ex.: cat/etc/passwd|  grep“root”
+ * ls-l  /lib|  grep^d
+ * ls-l  /lib|  grep-v  ^d
+ * grep-r  root  /etc
+ * grep-r  root  /etc|  more
+ * grep-r  root  /etc|  less
+ * ls-l  /etc|  grep2010
+ * ls-l  /etc|  grep-v  ^d  |  grep2010
+
+### egrep
+
+Similar to grep -E using regex. 
+
+### zgrep
+
+Similar to grep using to search in zip files.
+
+### wc
+	
+The command realize the count of lines, words or characters in a file or standard entry
+
+* ls-l  /etc|  wc-l
+* cat/etc/passwd|  wc-l
+* wc-l  /etc/passwd
+* ls-l  /etc|  grep^d  |  wc-l
+
+### tr
+
+translate or delete characters to standard input and display the result output 
+
+$cat /etc/passwd | tr : ; 
+
+
+### sed
+
+filter and transform the text
+
+$sed '/s/nologin/false' /etc/passwd
+
+### diff
+
+compare two files and shows the differences.
+
+$ diff [file1] [file2]
+
+### sort
+
+alphabetically order a specific file or standard entry
+
+$cat/etc/passwd|sort
+
+$sort/etc/passwd
+
+$cat/etc/passwd|  grep“/bin/bash”  |  cut-d  ‘:’  -f  1  |  sort  
+
+ $  sort/etc/passwd|  grep“/bin/bash”  |  cut-d  ‘:’  -f  1  
+
+### cut
+
+$ cut-d:  -f  1  /etc/passwd
+
+### awk 
+
+$awk-F:  ‘{ print$1 }’  /etc/passwd
+
+$ls-lh/var/log/  |  awk-F “ ”  ‘{ print“Nome do arquivo: ” $9 “ -Tamanho: ” $5 }’
