@@ -97,11 +97,58 @@ $cat/etc/passwd|  grep“/bin/bash”  |  cut-d  ‘:’  -f  1  |  sort
  $  sort/etc/passwd|  grep“/bin/bash”  |  cut-d  ‘:’  -f  1  
 
 ### cut
+Remove sections from each line of files
 
 $ cut-d:  -f  1  /etc/passwd
 
 ### awk 
 
+Similar to cut with more features
+
 $awk-F:  ‘{ print$1 }’  /etc/passwd
 
 $ls-lh/var/log/  |  awk-F “ ”  ‘{ print“Nome do arquivo: ” $9 “ -Tamanho: ” $5 }’
+
+### zip
+permit compress files in format zip
+
+$zip -r dados.zip /etc
+
+### unzip
+
+permit decompress files in format zip or list your content 
+
+$unzip dados.zip
+
+$unzip dados.zip -d "/root/bak-etc"
+
+### tar
+ 
+Tar is an archiving program designed to store multiple files in a single file.
+
+Packs data into a file without actually compressing.
+
+compress / decompress files using the pattern gzip
+
+$tar < options > [file] < options || path to compress 
+
+* c -> Compress or packed data into a new file.
+* x -> extract the content of a compressed file
+* t -> list the content of a compressed file
+* v -> display on screen what is being compressed or decompress
+* p -> Preserves the permissions of the file
+* r -> add files into package tar
+* z -> Operation mode with the gzip compactor
+* Z -> Operation mode with the compress compactor
+* j -> Operation mode with the bzip2 compactor
+* f -> Operation mode with file (the default is tape devices)
+
+$tarczfarquivo.tar.gz  /etc/
+
+$tarcjfarquivo.tar.bz2  /etc/
+
+$tarcfempacotado.tar  /etc/
+
+$tarxzfarquivo.tar.gz
+
+$tarxzfarquivo.tar.gz  -C  /diretorio/destino/desejado/
