@@ -14,10 +14,10 @@ Remove one user of system.
 
 
 $userdel 'Name of User'
- 
+
 ## usermod
 Change the proprieties of one user.
- 
+
 $usermod -G 0 'Name of User'
 
 
@@ -34,120 +34,108 @@ $groupadd 'name'
 
 
 
-## du
+## groupdel
 
-Display information about size of directory or files
+Delete one group in the system.
 
-$du -hs /etc
-
-## file
-
-Display the type of a file.
-  
-$file < name of file >
- 
- 
-## w
-
-Display the output of the command uptime and information about users connected.
-
-$w
-
-## who
-Display the users connected in the system.
-
-$who
-
-## whoami
-
-Display the current user logged in the terminal. 
-
-## dhclient
-request IP address to server DHCP
-
-$dhclient or dhclient < interface >
-
-## ifconfig
-Display current IP or configure IP for a given network adapter
-
-$ifconfig < interface >
-
-ifconfig < interface > [x.x.x.x] netmask [Y.Y.Y.Y]
-
-## route
-Displays or change routs or the default Gateway.
-
-$ route add deafult gw [X.X.X.X]
-
-$route -n
-
-## ip
-Displays and change network configurations, routing and tunneling.
-
-$ip address or ip addr list or ip addr
-
-define IP address to "enp0s3"
-
-$ip address add x.x.x.x/mask dev < interface >
-
-list the ip address of "enp0s3"
-
-$ip address list enp0s3 or ip addr list enp0s3
-
-show the routes
-$ip route 
-
-## dmesg
-
-Display all hardware loaded of the system 
-
-$dmesg
-
-## lspci 
-
-Show information of chipset and PCI devices 
-
-$ lspci
+$groupdel 'name'
 
 
-## lsusb
-Show information about USB devices connected on system.
 
-$lsusb
+## groupmod
+
+Modify one group.
+
+$groupmod -n 'new-name' 'old name'
 
 
-## lsmod 
-Show the modules loaded on system.
+## groups
 
-$lsmod
+List groups  of the group.
 
-## insmod 
+$groups 'user name'
 
-install modules in system 
+## passwd
+Define the password of the user.
 
-$ insmod [file] < options >
+$passwd 'user name'
 
-## rmmod
+## Files of configuration 
 
-remove modules on system 
+# /etc/passwd
 
-$ rmmod < name of module >
+content propriety of the user.
 
-## directory "/proc"
+1       2     3       4    5   6                      7
 
-display information of the CPU
+user:x:1004:1004::/home/aluno:/bin/bash
 
-$cat /proc/cpuinfo
+1° Field = Login
 
-Display information of the IDE devices
+2° Field = Password
 
-$ls -l /proc/ide
+3° Field = UID (User identifier)
 
-Display information of the SCSI, SATA or SAS
+4º Field = GID (Group Identifier)
 
-$cat /proc/scsi/scsi
+5º Field = Comment
 
-## fdisk
-Display information of all storage devices connected on system and other functions.
+6º Field = Home Directory
 
-$fdisk -l 
+7º Filed = Shell
+
+
+
+## /etc/group
+
+usermod -G 'group'  'user'
+
+usermod -G 'group'  'root'
+
+$tail -n 1 /etc/group
+
+group:x :1005:aluno,root
+
+1° Field =  Group name
+
+2° Field = Group Password 
+
+3° Field = GID (Group identifier)
+
+4º Field = Users members of the group 
+
+## /etc/shadow
+
+aluno:!!:15438:0:99999:7::: -> User created after password defined
+
+ aluno:$1$h1AA7S24$20fbYsUuUbYZyVAgOCZ6h1:15438:0:99999:7::: -> User created and password defined.
+
+
+
+1° Field = Login
+
+2° Field = Crypt Password
+
+3° Field =   Last changed password
+
+4º Field =  Minimum Password Age
+
+5º Field =  Maximum Password Age
+
+6º Field = Warn date of expiration 
+
+7º Field = Inactive inform date of the expiration of the password
+
+8° Field = Expire date of  automatic the account.  
+
+## su
+
+Change the current user to root user
+
+$su
+
+## sudo
+permitted the current user execute one command has root user.
+
+$sudo command. 
+
